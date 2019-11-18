@@ -9,5 +9,6 @@ public final class App {
         Process[] p = {p1, p2, p3};
         FCFS f = new FCFS(p);
         f.printGannttChart();
+
     }
 }
