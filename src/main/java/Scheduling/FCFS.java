@@ -5,32 +5,30 @@ import java.util.LinkedList;
 
 public class FCFS implements SchedulingInt{
 
-    Queue<Process> queue = new LinkedList<>();
+    private Process[] processes;
 
     public FCFS(Process[] processes){
-        for(int i = 0; i < processes.length; i++){
-            this.queue.add(processes[i]);
-        }
+        this.processes = processes.clone();
     }
 
     public void printGannttChart(){
-        int size = this.queue.size();
         String CPULine =     "CPU Burst Time:     ";
         String ArrivalLine = "Arrival Time  : ";
         String chart =       "                ";
         String processLine = "                ";
-        for(int i = 0; i < size; i++){
+        ArrivalLine += 0 + "       ";
+        int aTime = 0;
+        for(int i = 0; i < this.processes.length; i++){
             chart +="+-------";
-
-            ArrivalLine += this.queue.peek().getArrivalTime() + "       ";
-            CPULine += this.queue.peek().getCPUBurst() + "       ";
-            processLine += this.queue.poll().ProcessName + "      ";
+            aTime += this.processes[i].getArrivalTime();
+            ArrivalLine += aTime + "       ";
+            CPULine += this.processes[i].getCPUBurst() + "       ";
+            processLine += this.processes[i].ProcessName + "      ";
         }
         processLine += "";
         System.out.println(CPULine);
         System.out.println(ArrivalLine);
         System.out.println(chart);
         System.out.println(processLine);
-
     }
 }

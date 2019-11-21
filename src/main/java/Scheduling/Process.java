@@ -4,6 +4,8 @@ public class Process implements ProcessInt{
 
     private int aTime, cTime;
 
+    public int tTime, wTime;
+
     public String ProcessName;
 
     public Process(int arrivalTime, int CPUburst){
