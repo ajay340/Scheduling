@@ -26,6 +26,8 @@ public final class App {
         fcfs.printGannttChart();
         fcfs.printTable();
 
+        SJF sjf = new SJF(p);
+
 
     }
 }

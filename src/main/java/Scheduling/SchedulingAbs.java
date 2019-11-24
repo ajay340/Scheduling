@@ -1,6 +1,6 @@
 package Scheduling;
 
-public abstract class SchedulingAbs{
+public abstract class SchedulingAbs implements SchedulingInt{
 
     protected Process[] processes;
 
