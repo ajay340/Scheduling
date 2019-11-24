@@ -1,11 +1,13 @@
 package Scheduling;
 
+import java.util.Arrays;
 public abstract class SchedulingAbs implements SchedulingInt{
 
     protected Process[] processes;
 
     public SchedulingAbs(Process[] processes){
         this.processes = processes;
+        Arrays.sort(this.processes, (a, b) -> a.getArrivalTime() < b.getArrivalTime() ? -1 : a.getArrivalTime() == b.getArrivalTime() ? 0 : 1);
     }
 
     public void printGannttChart(){
