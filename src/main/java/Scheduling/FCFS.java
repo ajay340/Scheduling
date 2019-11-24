@@ -1,34 +1,20 @@
 package Scheduling;
 
-import java.util.Queue;
-import java.util.LinkedList;
+public class FCFS extends SchedulingAbs{
 
-public class FCFS implements SchedulingInt{
-
-    private Process[] processes;
 
     public FCFS(Process[] processes){
-        this.processes = processes.clone();
+
+        super(processes);
+
+        System.out.println("FIRST COME FIRST SERVER (FCFS)");
+        System.out.println("------------------------------\n");
+        
+        for(Process process : this.processes){
+            process.cTime = process.getArrivalTime() + process.getBurstTime();
+            process.tTime = process.cTime - process.getArrivalTime();
+            process.wTime = process.tTime - process.getBurstTime();
+        }
     }
 
-    public void printGannttChart(){
-        String CPULine =     "CPU Burst Time:     ";
-        String ArrivalLine = "Arrival Time  : ";
-        String chart =       "                ";
-        String processLine = "                ";
-        ArrivalLine += 0 + "       ";
-        int aTime = 0;
-        for(int i = 0; i < this.processes.length; i++){
-            chart +="+-------";
-            aTime += this.processes[i].getArrivalTime();
-            ArrivalLine += aTime + "       ";
-            CPULine += this.processes[i].getCPUBurst() + "       ";
-            processLine += this.processes[i].ProcessName + "      ";
-        }
-        processLine += "";
-        System.out.println(CPULine);
-        System.out.println(ArrivalLine);
-        System.out.println(chart);
-        System.out.println(processLine);
-    }
 }

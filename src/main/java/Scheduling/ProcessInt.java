@@ -4,6 +4,6 @@ public interface ProcessInt {
 
     public int getArrivalTime();
 
-    public int getCPUBurst();
+    public int getBurstTime();
 
 }

@@ -2,22 +2,22 @@ package Scheduling;
 import java.util.Random;
 public class Process implements ProcessInt{
 
-    private int aTime, cTime;
+    private int aTime, bTime;
 
-    public int tTime, wTime;
+    public int tTime, wTime, cTime;
 
     public String ProcessName;
 
-    public Process(int arrivalTime, int CPUburst){
+    public Process(int arrivalTime, int burstTime){
         this.aTime = arrivalTime;
-        this.cTime = CPUburst;
+        this.bTime = burstTime;
         Random rand = new Random();
         this.ProcessName = "Process #" + rand.nextInt(100);
     }
 
-    public Process(int arrivalTime, int CPUburst, String ProcessName){
+    public Process(int arrivalTime, int burstTime, String ProcessName){
         this.aTime = arrivalTime;
-        this.cTime = CPUburst;
+        this.bTime = burstTime;
         this.ProcessName = ProcessName;
     }
 
@@ -25,7 +25,8 @@ public class Process implements ProcessInt{
         return this.aTime;
     }
 
-    public int getCPUBurst(){
-        return this.cTime;
+    public int getBurstTime(){
+        return this.bTime;
     }
+
 }
