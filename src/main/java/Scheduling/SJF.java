@@ -1,5 +1,6 @@
 package Scheduling;
 
+import java.util.Arrays;
 
 public class SJF extends SchedulingAbs{
 
@@ -7,9 +8,20 @@ public class SJF extends SchedulingAbs{
         super(processes);
         System.out.println("SHORTEST JOB FIRST (SJF)");
         System.out.println("------------------------------\n");
-        System.out.println("PN : PaT");
-        for(Process process : this.processes){
-            System.out.println(process.ProcessName + " : " + process.arrivalTime);
+        Arrays.sort(this.processes, (a, b) -> ((a.arrivalTime == b.arrivalTime) && (a.burstTime < b.burstTime)) ? -1 : ((a.arrivalTime == b.arrivalTime) && (a.burstTime == b.burstTime)) ? 0 : 1);
+
+        for (int i = 0 ; i < processes.length; i++){
+            try{
+                this.processes[i].startTime = this.processes[i-1].completionTime;
+                this.processes[i].completionTime = this.processes[i - 1].completionTime + this.processes[i].burstTime;
+                this.processes[i].turnAroundTime = this.processes[i].completionTime - this.processes[i].arrivalTime;
+                this.processes[i].waitingTime = this.processes[i].turnAroundTime - this.processes[i].burstTime;
+            }
+            catch(Exception e){
+                this.processes[i].completionTime = this.processes[i].arrivalTime + this.processes[i].burstTime;
+                this.processes[i].turnAroundTime = this.processes[i].completionTime - this.processes[i].arrivalTime;
+                this.processes[i].waitingTime = this.processes[i].turnAroundTime - this.processes[i].burstTime;
+            }
         }
     }
 }

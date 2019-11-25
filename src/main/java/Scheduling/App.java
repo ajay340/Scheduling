@@ -21,8 +21,10 @@ public final class App {
 
         Process p1 = new Process(2, 3, "P1");
         Process p2 = new Process(1, 4, "P2");
-        Process p3 = new Process(3, 2, "P3");
-        Process[] p = { p1, p2, p3 };
+        Process p3 = new Process(3, 4, "P3");
+        Process p4 = new Process(3, 3, "P4");
+        Process p5 = new Process(0, 1, "P5");
+        Process[] p = { p1, p2, p3, p4, p5 };
 
 
         FCFS fcfs = new FCFS(p);
@@ -30,7 +32,8 @@ public final class App {
         fcfs.printTable();
 
         SJF sjf = new SJF(p);
-
+        sjf.printGannttChart();
+        sjf.printTable();
 
     }
 }

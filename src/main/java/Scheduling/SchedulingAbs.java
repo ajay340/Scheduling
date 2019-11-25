@@ -29,7 +29,7 @@ public abstract class SchedulingAbs implements SchedulingInt{
         ArrivalLine += "";
         for(int i = 0; i < this.processes.length; i++){
             chart +="+-------";
-            ArrivalLine += this.processes[i].arrivalTime + "       ";
+            ArrivalLine += this.processes[i].startTime + "       ";
             processLine += this.processes[i].ProcessName + "      ";
         }
         chart += "+";
