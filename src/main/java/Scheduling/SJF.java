@@ -1,13 +1,15 @@
 package Scheduling;
 
-import java.util.Arrays;
 
 public class SJF extends SchedulingAbs{
 
     public SJF(Process[] processes) {
         super(processes);
-        for(Process process : processes){
-            System.out.println(process.ProcessName);
+        System.out.println("SHORTEST JOB FIRST (SJF)");
+        System.out.println("------------------------------\n");
+        System.out.println("PN : PaT");
+        for(Process process : this.processes){
+            System.out.println(process.ProcessName + " : " + process.arrivalTime);
         }
     }
 }

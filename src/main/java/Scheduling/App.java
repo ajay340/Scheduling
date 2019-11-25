@@ -3,8 +3,9 @@ package Scheduling;
 import java.util.Scanner;
 
 public final class App {
+
     // User input
-    public static void main(String[] args) {
+    public static void main(String[] args){
         // Scanner input = new Scanner(System.in);   
         // System.out.println("How many proccess do you have?");
         // int numOfProc = input.nextInt();
@@ -18,10 +19,12 @@ public final class App {
         //     p[i] = new Process(arrivalTime, CPUtime, "P" + (i + 1));
         // }
 
-        Process p1 = new Process(2, 1, "P1");
-        Process p2 = new Process(1, 2, "P2");
-        Process p3 = new Process(3, 3, "P3");
-        Process[] p = {p1, p2, p3};
+        Process p1 = new Process(2, 3, "P1");
+        Process p2 = new Process(1, 4, "P2");
+        Process p3 = new Process(3, 2, "P3");
+        Process[] p = { p1, p2, p3 };
+
+
         FCFS fcfs = new FCFS(p);
         fcfs.printGannttChart();
         fcfs.printTable();
