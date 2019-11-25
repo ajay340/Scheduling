@@ -19,7 +19,7 @@ public final class App {
         //     p[i] = new Process(arrivalTime, CPUtime, "P" + (i + 1));
         // }
 
-        Process p1 = new Process(0, 1, "P1");
+        Process p1 = new Process(0, 3, "P1");
         Process p2 = new Process(1, 3, "P2");
         Process p3 = new Process(1, 1, "P3");
         Process p4 = new Process(1, 2, "P4");
