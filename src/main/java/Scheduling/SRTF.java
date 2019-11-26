@@ -18,28 +18,25 @@ public class SRTF extends SchedulingAbs{
             while(this.processes[i].burstTime != 0){
                 this.processes[i].burstTime = this.processes[i].burstTime - 1;
                 this.processes[i].completionTime = this.processes[i].completionTime + 1;
+                this.processes[i].current_progress += 1;
                 q.add(this.processes[i].ProcessName);
 
-                // Arrays.sort(this.processes, new Comparator<Process>() {
-                //     public int compare(Process u1, Process u2) {
-                //         if((u1.arrivalTime == current_progress) && (u1.burstTime < u2.burstTime)){
-                //             return -1;  
-                //         }
-                //         else if((u1.completionTime == u2.arrivalTime) && (u1.burstTime == u2.burstTime)){
-                //             return 0;
-                //         }
-                //         else{
-                //             return 1;
-                //         }     
-                //     }
-                //   });
-                
-                //(a, b) -> ((a.completionTime == b.arrivalTime) && (a.burstTime > b.burstTime)) ? -1 : ((a.completionTime == b.arrivalTime) && (a.burstTime == b.burstTime)) ? 0 : 1); 
+                Arrays.sort(this.processes, new Comparator<Process>() {
+                    public int compare(Process u1, Process u2) {
+                        u1.current_progress = u2.current_progress;
+                        if((u1.arrivalTime == u2.current_progress) && (u1.burstTime < u2.burstTime)){
+                            return -1;  
+                        }
+                        else if((u1.completionTime == u2.arrivalTime) && (u1.burstTime == u2.burstTime)){
+                            return 0;
+                        }
+                        else{
+                            return 1;
+                        }     
+                    }
+                  });
             }               
         }
         System.out.println(q.toString());
-    }
-    public void sortProcesses(){
-        
     }
 }

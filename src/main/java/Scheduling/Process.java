@@ -2,7 +2,7 @@ package Scheduling;
 import java.util.Random;
 public class Process implements ProcessInt{
 
-    public int startTime, arrivalTime, burstTime, turnAroundTime, waitingTime, completionTime;
+    public int startTime, arrivalTime, burstTime, turnAroundTime, waitingTime, completionTime, current_progress;
 
     public String ProcessName;
 
