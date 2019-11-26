@@ -25,8 +25,8 @@ public final class App {
         Process p4 = new Process(1, 2, "P4");
         Process p5 = new Process(2, 2, "P5");
         
-        Process p6 = new Process(0, 6, "P1");
-        Process p7 = new Process(1, 4, "P2");
+        Process p6 = new Process(0, 4, "P1");
+        Process p7 = new Process(1, 2, "P2");
         Process p8 = new Process(2, 1, "P3");
         Process[] p = { p6,p7, p8};//{ p1, p2, p3, p4, p5 };
 
