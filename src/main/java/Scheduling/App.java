@@ -24,16 +24,24 @@ public final class App {
         Process p3 = new Process(1, 1, "P3");
         Process p4 = new Process(1, 2, "P4");
         Process p5 = new Process(2, 2, "P5");
-        Process[] p = { p1, p2, p3, p4, p5 };
+        
+        Process p6 = new Process(0, 6, "P1");
+        Process p7 = new Process(1, 4, "P2");
+        Process p8 = new Process(2, 1, "P3");
+        Process[] p = { p6,p7, p8};//{ p1, p2, p3, p4, p5 };
 
 
-        FCFS fcfs = new FCFS(p);
-        fcfs.printGannttChart();
-        fcfs.printTable();
+        // FCFS fcfs = new FCFS(p);
+        // fcfs.printGannttChart();
+        // fcfs.printTable();
 
-        SJF sjf = new SJF(p);
-        sjf.printGannttChart();
-        sjf.printTable();
+        // SJF sjf = new SJF(p);
+        // sjf.printGannttChart();
+        // sjf.printTable();
+
+        SRTF srtf = new SRTF(p);
+        //srtf.printGannttChart();
+        //srtf.printTable();
 
     }
 }

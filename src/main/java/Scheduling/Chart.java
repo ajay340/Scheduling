@@ -2,8 +2,6 @@
 Chart structure from
 https://github.com/klaus31/ascii-art-table/
 
-All credits due to him
-
 */
 package Scheduling;
 
