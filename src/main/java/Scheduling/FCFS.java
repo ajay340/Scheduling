@@ -1,3 +1,6 @@
+//Ajay Shah and Eric Gargiulo
+//Date: 11/30/2019
+
 package Scheduling;
 
 public class FCFS extends SchedulingAbs{
