@@ -41,7 +41,7 @@ public abstract class SchedulingAbs implements SchedulingInt{
 
     @Override
     public void printTable(){
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
         System.out.printf("%10s %20s %20s %20s %20s %20s", "Process", "Arrival Time", "Completion Time", "Burst Time", "Turnaround Time", "Waiting Time");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
@@ -50,7 +50,7 @@ public abstract class SchedulingAbs implements SchedulingInt{
                     process.ProcessName, process.arrivalTime, process.completionTime, process.burstTime, process.turnAroundTime, process.waitingTime);
             System.out.println();
         }
-        System.out.println("--------------------------------------------------------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
         System.out.println("\n\n");
     }
 }

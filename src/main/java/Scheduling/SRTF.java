@@ -16,8 +16,8 @@ public class SRTF extends SchedulingAbs{
         for(int i = 0; i < this.processes.length; i++){
             while(this.processes[i].burstTime != 0){
                 this.processes[i].burstTime = this.processes[i].burstTime - 1;
-                this.processes[i].completionTime = this.processes[i].completionTime + 1;
                 this.processes[i].current_progress += 1;
+                this.processes[i].completionTime = this.processes[i].current_progress;
                 q.add(this.processes[i]);
                 Arrays.sort(this.processes, new Comparator<Process>() {
                     public int compare(Process u1, Process u2) {
@@ -35,18 +35,15 @@ public class SRTF extends SchedulingAbs{
                   });
             }               
         }
-        // Process[] p = new Process[q.size()];
-        // q.toArray(p);
-        // for(int i = 0; i < p.length; i++){
-        //     for(int j = i; j < p.length; j++){
-        //         if(p[i].ProcessName == p[j].ProcessName){
-        //             p[i].completionTime += 1;
-        //         }
-        //     }
-        // }
-        // for(int i = 0; i < p.length; i++){
-        //     System.out.println(p[i].ProcessName + " " + p[i].completionTime);
-        // }
+        Process[] p = new Process[q.size()];
+        q.toArray(p);
+        for(int i = 0; i < this.processes.length; i++){
+            for(int j = i; j < p.length; j++){
+                if(this.processes[i].ProcessName == p[j].ProcessName){
+                    this.processes[i].completionTime = j + 1;
+                }
+            }
+        }
     }
 
     @Override
