@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class SJF extends SchedulingAbs{
 
+    //Initalizes SJF with array of processes
+    //Sorts array based on burst time within respective arrival time order
     public SJF(Process[] processes) {
         super(processes);
         System.out.println("SHORTEST JOB FIRST (SJF)");

@@ -3,13 +3,18 @@ package Scheduling;
 import java.util.Arrays;
 public abstract class SchedulingAbs implements SchedulingInt{
 
+    //Protected Variable of array of processes
     protected Process[] processes;
 
+    //Constructor of Scheduling Abs
+    //Creates deepcopy of inputted array of processes
+    //Sorts copied array based on arrival times
     public SchedulingAbs(Process[] processes){
         this.processes = deepCopy(processes);
         Arrays.sort(this.processes, (a, b) -> a.arrivalTime < b.arrivalTime ? -1 : a.arrivalTime == b.arrivalTime ? 0 : 1);
     }
 
+    //Returns copy array of input processes array
     public Process[] deepCopy(Process[] processes){
         Process[] clone = new Process[processes.length];
         for(int i = 0; i < processes.length; i++){
@@ -21,6 +26,7 @@ public abstract class SchedulingAbs implements SchedulingInt{
         return clone;
     }
 
+    //Prints out generic gantt chart
     @Override
     public void printGannttChart(){
         String ArrivalLine = "        Time  : ";
@@ -39,6 +45,7 @@ public abstract class SchedulingAbs implements SchedulingInt{
         System.out.println(processLine);
     }
 
+    //Print out generic table with Turnaround and Waiting times
     @Override
     public void printTable(){
         System.out.println("---------------------------------------------------------------------------------------------------------------------");

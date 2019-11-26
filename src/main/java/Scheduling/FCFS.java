@@ -1,10 +1,8 @@
 package Scheduling;
 
-import java.util.Arrays;
-
 public class FCFS extends SchedulingAbs{
 
-
+    //Initalizes FCFS scheduler
     public FCFS(Process[] processes){
 
         super(processes);

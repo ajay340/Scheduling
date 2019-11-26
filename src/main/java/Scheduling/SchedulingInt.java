@@ -2,9 +2,9 @@ package Scheduling;
 
 public interface SchedulingInt{
 
-    public Process[] deepCopy(Process[] processes);
-
+    //Prints Generic Ganntt Chart
     public void printGannttChart();
 
+    //Prints Gneric Table with Turnaround and Waiting times
     public void printTable();
 }
