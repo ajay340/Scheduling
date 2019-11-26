@@ -6,7 +6,7 @@ public class FCFS extends SchedulingAbs{
     public FCFS(Process[] processes){
 
         super(processes);
-        System.out.println("FIRST COME FIRST SERVER (FCFS)");
+        System.out.println("FIRST COME FIRST SERVE (FCFS)");
         System.out.println("------------------------------\n");
 
         for (int i = 0 ; i < processes.length; i++){
