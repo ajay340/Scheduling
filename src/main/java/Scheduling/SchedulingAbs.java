@@ -41,17 +41,16 @@ public abstract class SchedulingAbs implements SchedulingInt{
 
     @Override
     public void printTable(){
-        Chart table = new Chart();
-        table.addHeaderCols("Process", "Arrival Time", "Completion Time", "Burst Time", "Turnaround Time", "Waiting Time");
-        for(Process process : this.processes){
-            table.add(process.ProcessName);
-            table.add(process.arrivalTime);
-            table.add(process.completionTime);
-            table.add(process.burstTime);
-            table.add(process.turnAroundTime);
-            table.add(process.waitingTime);
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %20s %20s %20s %20s %20s", "Process", "Arrival Time", "Completion Time", "Burst Time", "Turnaround Time", "Waiting Time");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        for(Process process: this.processes){
+            System.out.format("%5s %20s %20s %20s %20s %20s",
+                    process.ProcessName, process.arrivalTime, process.completionTime, process.burstTime, process.turnAroundTime, process.waitingTime);
+            System.out.println();
         }
-        table.print(System.out);
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
         System.out.println("\n\n");
     }
 }
